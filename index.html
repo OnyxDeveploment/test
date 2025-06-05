@@ -1,1 +1,41 @@
-g
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="פגישונים סגרו את האתר - נא לא להשתמש באתרים לא חוקיים.">
+  <title>פגישונים - האתר סגור</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    body {
+      background: linear-gradient(to top left, #f43f5e, #6366f1);
+    }
+
+    .glass {
+      backdrop-filter: blur(12px);
+      background-color: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in {
+      animation: fadeIn 1s ease-out;
+    }
+  </style>
+</head>
+<body class="min-h-screen flex items-center justify-center text-right font-sans text-white">
+
+  <div class="glass fade-in rounded-xl shadow-2xl p-8 max-w-xl w-full mx-4 text-white">
+    <h1 class="text-4xl font-extrabold mb-4">פגישונים</h1>
+    <p class="text-2xl font-semibold mb-3">סגרו את האתר</p>
+    <p class="text-md leading-relaxed text-white/90">
+      נא לא להשתמש באתרים לא חוקיים המשמשים לזיוף. ידוע מי בעל האתר והוא ייענש בחומרה.
+    </p>
+  </div>
+
+</body>
+</html>
