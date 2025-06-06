@@ -5,49 +5,84 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="האתר נסגר על ידי פגישונים - נא לא להשתמש באתרים לא חוקיים." />
   <title>האתר נסגר - פגישונים</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700&display=swap" rel="stylesheet" />
+  
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Noto Sans Hebrew"', 'sans-serif'],
+          },
+          colors: {
+            bgStart: '#0f172a',
+            bgEnd: '#1e3a8a',
+            glass: 'rgba(255, 255, 255, 0.07)',
+          },
+        },
+      },
+    }
+  </script>
+
   <style>
     body {
-      background: linear-gradient(to top left, #0f172a, #1e3a8a);
+      background: linear-gradient(130deg, #0f172a, #1e3a8a);
+      overflow: hidden;
     }
 
     .glass {
-      backdrop-filter: blur(14px);
+      backdrop-filter: blur(20px);
       background-color: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.1);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
     }
 
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .glow {
+      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
     }
 
-    .fade-in {
-      animation: fadeIn 1s ease-out;
+    @keyframes floatBg {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+      100% { transform: translateY(0); }
+    }
+
+    .bg-shape {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
+      filter: blur(80px);
+      animation: floatBg 6s ease-in-out infinite;
+      z-index: 0;
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center text-right font-sans text-white">
+<body class="min-h-screen flex items-center justify-center text-right font-sans text-white relative">
 
-  <div class="glass fade-in rounded-xl p-8 max-w-xl w-full mx-4 text-center text-slate-100">
-    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-20 h-20 mx-auto mb-4" />
-    <h1 class="text-4xl font-extrabold mb-4 text-sky-400 drop-shadow">האתר נסגר</h1>
-    <p class="text-2xl font-semibold mb-3">
-      האתר הוסר על ידי
-      <a href="https://pgishonim.com/" class="underline text-sky-300 hover:text-sky-200">פגישונים</a>
-    </p>
-    <p class="text-md leading-relaxed text-slate-200">
-      אתר זה שימש לזיוף אישורי יציאה באופן בלתי חוקי.<br />
-      בעל האתר זוהה וצפוי לעמוד לדין בהתאם לחוק. <br />
+  <!-- Animated Background Blob -->
+  <div class="bg-shape top-[-100px] right-[-150px]"></div>
+  <div class="bg-shape bottom-[-100px] left-[-150px] animation-delay-2000"></div>
+
+  <!-- Main Card -->
+  <div class="glass fade-in relative z-10 rounded-2xl p-10 max-w-xl w-full mx-4 text-center text-slate-100">
+    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-24 h-24 mx-auto mb-6 drop-shadow-md" />
+    
+    <h1 class="text-4xl font-bold mb-3 text-sky-400 glow">האתר נסגר</h1>
+
+    <p class="text-lg font-medium mb-6 text-slate-200 leading-relaxed">
+      אתר זה הוסר על ידי <span class="text-sky-300 font-semibold">פגישונים</span> בעקבות שימוש בלתי חוקי לזיוף אישורי יציאה.<br />
+      <span class="text-red-300 font-semibold">בעל האתר זוהה וצפוי לעמוד לדין.</span><br />
       כל שימוש נוסף באתרים מסוג זה מהווה עבירה פלילית חמורה.
     </p>
+
+    <a href="https://pgishonim.com/" target="_blank"
+       class="inline-block bg-sky-500 hover:bg-sky-600 transition-colors text-white font-bold py-2 px-6 rounded-full text-sm shadow-lg">
+      מעבר לאתר פגישונים
+    </a>
   </div>
 
 </body>
