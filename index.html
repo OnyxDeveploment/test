@@ -1,25 +1,32 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="האתר נסגר על ידי פגישונים - נא לא להשתמש באתרים לא חוקיים.">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="האתר נסגר על ידי פגישונים - נא לא להשתמש באתרים לא חוקיים." />
   <title>האתר נסגר - פגישונים</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
     body {
-      background-color: #1e293b;
+      background: linear-gradient(to top left, #0f172a, #1e3a8a);
     }
 
     .glass {
-      backdrop-filter: blur(12px);
-      background-color: rgba(255, 255, 255, 0.08);
-      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(14px);
+      background-color: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .fade-in {
@@ -29,15 +36,17 @@
 </head>
 <body class="min-h-screen flex items-center justify-center text-right font-sans text-white">
 
-  <div class="glass fade-in rounded-xl shadow-xl p-8 max-w-xl w-full mx-4 text-white text-center">
-    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-20 h-20 mx-auto mb-4">
-    <h1 class="text-4xl font-extrabold mb-4 text-blue-400">האתר נסגר</h1>
+  <div class="glass fade-in rounded-xl p-8 max-w-xl w-full mx-4 text-center text-slate-100">
+    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-20 h-20 mx-auto mb-4" />
+    <h1 class="text-4xl font-extrabold mb-4 text-sky-400 drop-shadow">האתר נסגר</h1>
     <p class="text-2xl font-semibold mb-3">
-      האתר הוסר על ידי 
-      <a href="https://pgishonim.com/" target="_blank" class="underline text-blue-300 hover:text-blue-200">פגישונים</a>
+      האתר הוסר על ידי
+      <a href="https://pgishonim.com/" target="_blank" class="underline text-sky-300 hover:text-sky-200">פגישונים</a>
     </p>
-    <p class="text-md leading-relaxed text-white/90">
-      אתר זה שימש לזיוף אישורי יציאה באופן בלתי חוקי. בעל האתר זוהה, והוא צפוי לעמוד לדין וייענש בחומרה בהתאם לחוק. כל שימוש נוסף באתרים מהסוג הזה מהווה עבירה פלילית חמורה.
+    <p class="text-md leading-relaxed text-slate-200">
+      אתר זה שימש לזיוף אישורי יציאה באופן בלתי חוקי.<br />
+      בעל האתר זוהה וצפוי לעמוד לדין בהתאם לחוק. <br />
+      כל שימוש נוסף באתרים מסוג זה מהווה עבירה פלילית חמורה.
     </p>
   </div>
 
