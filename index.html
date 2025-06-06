@@ -3,12 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="האתר נסגר על ידי פגישונים - נא לא להשתמש באתרים לא חוקיים." />
   <title>האתר נסגר - פגישונים</title>
-
-  <!-- Google Font -->
+  <meta name="description" content="האתר הוסר על ידי פגישונים. נא לא להשתמש באתרים לא חוקיים." />
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Hebrew:wght@400;600;700&display=swap" rel="stylesheet" />
-  
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -18,71 +15,75 @@
             sans: ['"Noto Sans Hebrew"', 'sans-serif'],
           },
           colors: {
-            bgStart: '#0f172a',
-            bgEnd: '#1e3a8a',
-            glass: 'rgba(255, 255, 255, 0.07)',
+            deepBlue: '#0a0f2c',
+            lightBlue: '#38bdf8',
+            alertRed: '#f87171',
           },
-        },
-      },
+          backgroundImage: {
+            'deep-gradient': 'radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15), transparent 40%), radial-gradient(circle at 80% 70%, rgba(248, 113, 113, 0.1), transparent 50%)',
+          },
+        }
+      }
     }
   </script>
 
   <style>
     body {
-      background: linear-gradient(130deg, #0f172a, #1e3a8a);
-      overflow: hidden;
+      background-color: #0a0f2c;
+      background-image: radial-gradient(circle at 20% 30%, rgba(56, 189, 248, 0.15), transparent 40%),
+                        radial-gradient(circle at 80% 70%, rgba(248, 113, 113, 0.1), transparent 50%);
+      background-repeat: no-repeat;
+      background-size: cover;
+      min-height: 100vh;
     }
 
     .glass {
-      backdrop-filter: blur(20px);
-      background-color: rgba(255, 255, 255, 0.06);
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(18px);
+      background-color: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+      transition: transform 0.3s ease;
+    }
+
+    .glass:hover {
+      transform: scale(1.01);
     }
 
     .glow {
-      text-shadow: 0 0 8px rgba(56, 189, 248, 0.6);
+      text-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
     }
 
-    @keyframes floatBg {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-10px); }
-      100% { transform: translateY(0); }
+    .btn-glow {
+      box-shadow: 0 0 10px rgba(56, 189, 248, 0.6), 0 0 20px rgba(56, 189, 248, 0.3);
+      transition: all 0.3s ease;
     }
 
-    .bg-shape {
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      background: radial-gradient(circle, rgba(56, 189, 248, 0.2), transparent 70%);
-      filter: blur(80px);
-      animation: floatBg 6s ease-in-out infinite;
-      z-index: 0;
+    .btn-glow:hover {
+      box-shadow: 0 0 18px rgba(56, 189, 248, 0.8);
+      transform: scale(1.05);
     }
   </style>
 </head>
-<body class="min-h-screen flex items-center justify-center text-right font-sans text-white relative">
 
-  <!-- Animated Background Blob -->
-  <div class="bg-shape top-[-100px] right-[-150px]"></div>
-  <div class="bg-shape bottom-[-100px] left-[-150px] animation-delay-2000"></div>
+<body class="flex items-center justify-center font-sans text-white text-right p-6">
 
-  <!-- Main Card -->
-  <div class="glass fade-in relative z-10 rounded-2xl p-10 max-w-xl w-full mx-4 text-center text-slate-100">
-    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-24 h-24 mx-auto mb-6 drop-shadow-md" />
-    
-    <h1 class="text-4xl font-bold mb-3 text-sky-400 glow">האתר נסגר</h1>
+  <div class="glass rounded-3xl p-10 max-w-xl w-full text-center fade-in relative z-10">
 
-    <p class="text-lg font-medium mb-6 text-slate-200 leading-relaxed">
-      אתר זה הוסר על ידי <span class="text-sky-300 font-semibold">פגישונים</span> בעקבות שימוש בלתי חוקי לזיוף אישורי יציאה.<br />
-      <span class="text-red-300 font-semibold">בעל האתר זוהה וצפוי לעמוד לדין.</span><br />
-      כל שימוש נוסף באתרים מסוג זה מהווה עבירה פלילית חמורה.
+    <img src="https://pgishonim.com/images/app_logo_white.png" alt="לוגו פגישונים" class="w-24 h-24 mx-auto mb-6 drop-shadow-xl" />
+
+    <h1 class="text-4xl font-extrabold mb-4 text-lightBlue glow">האתר נסגר</h1>
+
+    <p class="text-lg font-medium text-slate-200 leading-loose mb-6">
+      אתר זה הוסר על ידי <span class="text-lightBlue font-semibold">פגישונים</span> בשל שימוש ב־<span class="text-alertRed font-semibold">אישורי יציאה מזויפים</span>.<br>
+      <span class="text-alertRed font-bold">בעל האתר זוהה וצפוי לעמוד לדין</span> בהתאם לחוק.<br>
+      כל ניסיון נוסף לשימוש באתר מסוג זה מהווה <span class="underline decoration-red-500">עבירה פלילית חמורה</span>.
     </p>
 
-    <a href="https://pgishonim.com/" target="_blank"
-       class="inline-block bg-sky-500 hover:bg-sky-600 transition-colors text-white font-bold py-2 px-6 rounded-full text-sm shadow-lg">
-      מעבר לאתר פגישונים
+    <a href="https://pgishonim.com/"
+      class="inline-flex items-center justify-center gap-2 bg-lightBlue hover:bg-sky-500 text-white font-semibold py-2 px-6 rounded-full text-sm btn-glow">
+      ⚖️ מעבר לאתר פגישונים
     </a>
+
   </div>
 
 </body>
